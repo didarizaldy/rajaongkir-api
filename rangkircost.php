@@ -1,9 +1,9 @@
 <?php
 
-$ekspedisi = isset($_POST['ekspedisi']) ? $_POST['ekspedisi'] : '';
-$tujuan = isset($_POST['tujuan']) ? $_POST['tujuan'] : '';
-$berat = isset($_POST['berat']) ? $_POST['berat'] : '';
-$asal = isset($_POST['asal']) ? $_POST['asal'] : '';
+$ekspedisi = isset($_POST['courier']) ? $_POST['courier'] : '';
+$tujuan = isset($_POST['destination']) ? $_POST['destination'] : '';
+$berat = isset($_POST['weight']) ? $_POST['weight'] : '';
+$asal = isset($_POST['origin']) ? $_POST['origin'] : '';
 
 
 $curl = curl_init();
@@ -21,7 +21,7 @@ curl_setopt_array($curl, array(
     CURLOPT_POSTFIELDS => "origin={$asal}&destination={$tujuan}&weight={$berat}&courier=$ekspedisi",
     CURLOPT_HTTPHEADER => array(
         "content-type: application/x-www-form-urlencoded",
-        "key: aead7d664de4f808b857834470d2e10e"
+        "key: "
     ),
 ));
 
